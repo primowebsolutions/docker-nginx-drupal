@@ -42,9 +42,8 @@ RUN usermod -u 1000 www-data
 RUN usermod -a -G users www-data
 RUN chown -R www-data:www-data /var/www
 
-EXPOSE 80
+EXPOSE 80 443
 WORKDIR /var/www
-VOLUME ["/var/www/sites/default/files"]
 CMD ["/usr/bin/supervisord", "-n"]
 
 # Startup script
